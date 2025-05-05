@@ -39,58 +39,58 @@
             </div>
         </section>
         <section id="s2">
-            <h2>Paisagens de lugares diferentes</h2>
+            <h2>Paisagens de lugares diferentes</h2><br><br>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                       <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="./assets/images/img01.jpg" class="card-img-top" alt="Paisagem 01">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">Curitiba</h5>
                           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="./assets/images/img02.jpg" class="card-img-top" alt="Paisagem 02">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">São Paulo</h5>
                           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer</p>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="./assets/images/img03.jpg" class="card-img-top" alt="Paisagem 03">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">Terezina</h5>
                           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                       <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="./assets/images/img04.jpg" class="card-img-top" alt="Paisagem 04">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                          <h5 class="card-title">Osasco</h5>
                           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                       </div>
                     </div>
                     <div class="col">
                         <div class="card h-100">
-                          <img src="..." class="card-img-top" alt="...">
+                          <img src="./assets/images/img05.jpg" class="card-img-top" alt="Paisagem 05">
                           <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Colombo</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                           </div>
                         </div>
                       </div>
                       <div class="col">
                         <div class="card h-100">
-                          <img src="..." class="card-img-top" alt="...">
+                          <img src="./assets/images/img06.jpg" class="card-img-top" alt="Paisagem 06">
                           <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Alm. Tamandaré</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                           </div>
                         </div>
@@ -98,11 +98,42 @@
             </div>
         </section>
         <section id="s3">
-            <h2>Contato</h2>
+            <h2>Contato</h2><br><br>
+            <div class="formulario">
+                  <label for="nome">Nome</label>
+                  <input id="nome" type="text" placeholder="Insira seu nome">
+                  <label for="assunto">Mensagem</label>
+                  <input id="assunto" type="text" placeholder="Insira o assunto">
+                  <br>
+                  <button class="btn" onclick="enviar()">Enviar</button>
+            </div>
         </section>
     </main>
     <footer>
-
+        <a target="_blank" href="https://www.facebook.com/"> <img src="./assets/icons/facebook.png" alt="Facebook Icon"></a>
+        <a target="_blank" href="https://www.instagram.com/"> <img src="./assets/icons/instagram.png" alt="Instagram Icon"></a>
+        <a target="_blank" href="https://www.linkedin.com/"> <img src="./assets/icons/linkedin.png" alt="Linkedin Icon"></a>
+        <a target="_blank" href="https://x.com/"> <img src="./assets/icons/twitter.png" alt="Twitter Icon"></a>
     </footer>
+
+    <script>
+      function enviar(){
+        document.getElementById("nome").style.border = "2px solid #ffffff"
+        document.getElementById("assunto").style.border = "2px solid #ffffff"
+        const nome = document.getElementById("nome").value
+        const assunto = document.getElementById("assunto").value
+        
+        if(!nome || !assunto){
+          document.getElementById("nome").style.border = "3px solid red"
+          document.getElementById("assunto").style.border = "3px solid red"
+          return
+        }
+
+        const mensagem = `Gostaria de entrar em contato! \n\nNome: ${nome} \nAssunto: ${assunto}`
+        const msg = encodeURIComponent(mensagem)
+        // window.location.href = `https://wa.me/5541999999999?text=${msg}`
+        window.open(`https://wa.me/5541999999999?text=${msg}`, '_blank')
+      }
+    </script>
 </body>
 </html>
